@@ -25,10 +25,16 @@ class special_pipe(object):
 
 
 def calculate_pi_digits():
-    i = 0
+    q, r, t, j = 1, 180, 60, 2
     while True:
-        yield i
-        i += 1
+        u = 3 * (3 * j + 1) * (3 * j + 2)
+        y = (q * (27 * j - 12) + 5 * r) // (5 * t)
+        yield y
+        new_q = 10 * q * j * (2 * j - 1)
+        r = 10 * u * (q * (5 * j - 2) + r - y * t)
+        t = t * u
+        j = j + 1
+        q = new_q
 
 
 while True:
